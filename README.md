@@ -200,6 +200,5 @@ Built with ❤️ by [Your Name](https://github.com/your-username)
 
 If you have any questions or suggestions, feel free to reach out:
 
-- Email: your-email@example.com
-- GitHub: [@your-username](https://github.com/your-username)
-- Twitter: [@your-handle](https://twitter.com/your-handle)
+- Email: jhariharan236@gmail.com
+- GitHub: [@HariharanJ7](https://github.com/HariharanJ7)
