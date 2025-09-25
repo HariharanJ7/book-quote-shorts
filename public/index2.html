@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Quote Shorts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons (Like/Share) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>BookQuote Shorts</h1>
+        </header>
+
+        <main class="quote-viewer">
+            <div class="quote-container" id="quote-container">
+                <div class="quote-content">
+                    <p class="quote-text" id="quote-text"></p>
+                    <p class="quote-author" id="quote-author"></p>
+                    <p class="book-title" id="book-title"></p>
+                </div>
+                <div class="quote-actions">
+                    <button class="action-button like-button" aria-label="Like quote">
+                        <i class="fas fa-heart"></i> Like
+                    </button>
+                    <button class="action-button share-button" aria-label="Share quote">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-button prev-button" id="prev-button" aria-label="Previous quote">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-button next-button" id="next-button" aria-label="Next quote">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2023 BookQuote Shorts</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

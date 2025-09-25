@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    --primary-color: #3f51b5; /* Indigo */
+    --secondary-color: #ff4081; /* Pink Accent */
+    --background-color: #e8eaf6; /* Light Indigo background */
+    --card-background: #ffffff;
+    --text-color: #333;
+    --light-text-color: #666;
+    --border-radius: 12px;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.4s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* overflow: hidden; Prevent scrollbars due to transitions */
+}
+
+/* .app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    background-color: #fcfdff;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden; 
+} */
+
+.header {
+  display: flex;
+  align-items: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+  padding-bottom: 10px;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: rgba(96, 165, 250, 1);
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 1);
+}
+
+.icon svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.alert {
+  font-size: 29px;
+  font-weight: 600;
+  color: rgba(107, 114, 128, 1);
+}
+
+.tit-card {
+  width: 200px;
+  height: 80px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+}
+.wave {
+  position: absolute;
+  transform: rotate(90deg);
+  left: -31px;
+  top: 32px;
+  width: 80px;
+  fill: #04e4003a;
+}
+.icon-container {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #04e40048;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+.tit-icon {
+  width: 17px;
+  height: 17px;
+  color: #269b24;
+}
+.message-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+.message-text,
+.sub-text {
+  margin: 0;
+  cursor: default;
+}
+.message-text {
+  color: #269b24;
+  font-size: 17px;
+  font-weight: 700;
+}
+.sub-text {
+  font-size: 14px;
+  color: #555;
+}
+.cross-icon {
+  width: 18px;
+  height: 18px;
+  color: #555;
+  cursor: pointer;
+}
+
+.card-container {
+  width: 400px;
+  background: linear-gradient(
+    to top right,
+    #975af4,
+    #2f7cf8 40%,
+    #78aafa 65%,
+    #934cff 100%
+  );
+  padding: 4px;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.card-container .title-card {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  justify-content: space-between;
+  color: #fff;
+}
+.card-container .title-card p {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 2px 2px 6px #2975ee;
+}
+
+.card-container .card-content {
+  width: 100%;
+  height: 100%;
+  background-color: #161a20;
+  border-radius: 30px;
+  color: #838383;
+  font-size: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+.card-container .card-content .title {
+  font-weight: 600;
+  color: #bab9b9;
+}
+.card-container .card-content .plain :nth-child(1) {
+  font-size: 36px;
+  color: #fff;
+}
+.card-container .card-content .card-btn {
+  background: linear-gradient(
+    4deg,
+    #975af4,
+    #2f7cf8 40%,
+    #78aafa 65%,
+    #934cff 100%
+  );
+  padding: 8px;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6);
+}
+.card-container .card-content .card-btn:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #fff;
+  transform: scale(1.03);
+}
+.card-container .card-content .card-btn:active {
+  transform: scale(1);
+}
+
+
+/* .app-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin: 0;
+} */
+
+.quote-viewer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 0px;
+    position: relative;
+    overflow: hidden; /* For smooth transitions */
+}
+
+.quote-container {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    max-width: 90%;
+    width: 100%;
+    position: relative;
+    transition: transform var(--transition-speed) ease-out, opacity var(--transition-speed) ease-out;
+    min-height: 280px; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Transition effects */
+.quote-container.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.quote-container.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quote-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.quote-author {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--light-text-color);
+    margin-bottom: 0.5rem;
+}
+
+.book-title {
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+    font-weight: 500;
+}
+
+.quote-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    border-top: 1px solid #eee;
+}
+
+.action-button {
+    background-color: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-button:hover {
+    background-color: rgba(var(--primary-color), 0.1);
+    color: var(--primary-color);
+}
+
+.action-button i {
+    font-size: 1.2rem;
+}
+
+.like-button:hover {
+    color: var(--secondary-color);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 6px;
+  text-decoration: none;
+}
+
+.button:first-child {
+  box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+  background-color: #488aec;
+}
+
+.button:last-child {
+  box-shadow: 0 4px 6px -1px #0b162531, 0 2px 4px -1px #0e192b17;
+  background-color: #fff;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.button-text span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.like span {
+  color: #fff;
+  font-weight: 800;
+}
+
+.share span {
+  color: #000;
+  font-weight: 800;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 9.5rem;
+    width: 100%;
+    position: absolute; /* Position relative to .quote-viewer */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.nav-button {
+    background-color: rgba(var(--primary-color), 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+    pointer-events: auto; /* Re-enable clicks for buttons */
+}
+
+.nav-button:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.nav-button:active {
+    transform: scale(0.95);
+}
+
+.prev-button {
+    margin-right: auto; /* Pushes button to the left edge */
+    margin-left: 20px;
+}
+
+.next-button {
+    margin-left: auto; /* Pushes button to the right edge */
+    margin-right: 20px;
+}
+
+.app-footer {
+    padding: 1rem;
+    text-align: center;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .app-container {
+        border-radius: 0;
+        min-height: 100dvh; /* Use dvh for better mobile viewport height */
+    }
+
+    .app-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .quote-container {
+        padding: 1.5rem;
+        max-width: 95%;
+        min-height: 250px;
+    }
+
+    .quote-text {
+        font-size: 1.4rem;
+    }
+
+    .quote-author {
+        font-size: 1rem;
+    }
+
+    .book-title {
+        font-size: 0.85rem;
+    }
+
+    .action-button {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .action-button i {
+        font-size: 1rem;
+    }
+
+    .nav-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        margin: 0 10px; /* Adjust spacing for smaller screens */
+    }
+
+    .prev-button {
+        margin-left: 10px;
+    }
+
+    .next-button {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .quote-container {
+        min-height: 220px;
+        padding: 1rem;
+    }
+    .quote-text {
+        font-size: 1.2rem;
+    }
+    .quote-author {
+        font-size: 0.9rem;
+    }
+    .book-title {
+        font-size: 0.8rem;
+    }
+    .quote-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .nav-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
