@@ -21,7 +21,7 @@ A responsive web application that displays short quotes from books in an engagin
 
 ## 🚀 Live Demo
 
-Check out the live application: [Book Quote Shorts Live Demo](https://book-quote-shorts.onrender.com)
+Check out the live application: [Book Quote Shorts Live Demo](https://book-quote-shorts-a5ae.onrender.com/)
 
 ## 🛠️ Technology Stack
 
